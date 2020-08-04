@@ -1,11 +1,11 @@
 [client]
-port                    = 3306
+port                    = 3307
 default-character-set   = utf8mb4
 
 
 [mysqld]
 user                    = mysql
-port                    = 3306
+port                    = 3307
 sql_mode                = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 
 default-storage-engine  = InnoDB
@@ -24,8 +24,9 @@ slow-query-log-file     = /var/lib/mysql/mysql.slow.log
 log-error               = /var/lib/mysql/mysql.error.log
 
 default-time-zone       = '+8:00'
-server-id=100
-log-bin=mysql-bin
+log-bin=mysql-slave-bin
+server-id=101
+relay_log=edu-mysql-relay-bin
 
 [mysql]
 default-character-set   = utf8mb4
